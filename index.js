@@ -21,16 +21,16 @@ server.use(express.json());
 
 server.use(express.urlencoded({ extended: false }));
 
-
+const CiudadesRoutes = require("./src/api/routes/lugares.routes");
 const CaracteresRoutes = require("./src/api/routes/caracteres.routes");
 
+server.use("/ciudades", CiudadesRoutes);
 server.use("/caracteres", CaracteresRoutes);
 
 server.use("*", (req, res, next) => {
     return next("Ruta no encontrada");
 });
 
-//----Escuchamos nuestro servidor en el puerto deseado
 server.listen(PORT, () => {
     console.log(`Servidor arrancado en http://localhost:${PORT}`);
 });

@@ -1,7 +1,6 @@
 
 const CaracteresRoutes = require('express').Router();
 
-//---- Nos traemos todas las funciones que acabamos de crear en nuestro controlador
 const { getCaracteres, getCaracterByID, getCaracterByRaza, getCaracteresByPoder, postNewCaracter, deleteCaracter, patchCaracter } = require('../controllers/caracteres.controller');
 
 CaracteresRoutes.get('/', getCaracteres);

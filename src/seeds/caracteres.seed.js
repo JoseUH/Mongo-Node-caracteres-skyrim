@@ -78,12 +78,10 @@ const caracteres = [
 
 ];
 
-//Con este mapeo creo muchas peliculas del tipo peliculas recorriendo el array de objetos que he definido
 const caracteresDocuments = caracteres.map((caracter) => new Caracter(caracter));
 
-//Vamos a realizar la conexión con MONGO para insertar los documentos
 mongoose
-  .connect("mongodb://localhost:27017/caracteres", {
+  .connect("mongodb://localhost:27017/skyrim", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
